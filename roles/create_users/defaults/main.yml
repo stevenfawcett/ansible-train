@@ -1,0 +1,6 @@
+---
+# defaults file for create_users
+username: test1
+usergroups:
+    - admins
+    - developers

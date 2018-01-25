@@ -1,0 +1,16 @@
+---
+# tasks file for create_users
+
+- name: Create all the groups required for this project
+  group:
+     name: "{{ item }}"
+  with_items:
+        "{{ usergroups }} "
+
+- name: "Setting the username to {{ username }}"
+  user:
+     name: "{{ username }}"
+     comment: My very first user
+     shell: /bin/bash
+     groups: "{{ usergroups }}"
+
